@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Alex Chen — Developer</title>
+<title>Aastha Narain — Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -108,27 +108,81 @@
   .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
 
   .hero-right {
-    padding: 80px 48px;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    position: relative; overflow: hidden;
-  }
+  padding: 80px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* changed */
+  border-left: none;
+}
 
-  .hero-bg-number {
-    position: absolute; top: 60px; right: 32px;
-    font-family: var(--serif); font-size: 260px; font-weight: 300;
-    color: var(--border); line-height: 1; user-select: none;
-    letter-spacing: -8px;
-  }
+.hero-stats {
+  max-width: 520px;
+}
 
-  .hero-stats {
-    position: relative; z-index: 1;
-    display: flex; flex-direction: column; gap: 24px;
-    border-top: 1px solid var(--border); padding-top: 32px;
-  }
+.hero-section {
+  margin-bottom: 48px;
+}
 
-  .stat-item { display: flex; justify-content: space-between; align-items: baseline; }
-  .stat-label { font-size: 11px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; }
-  .stat-value { font-family: var(--serif); font-size: 32px; font-weight: 300; }
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stat-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.focus-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.focus-item {
+  display: flex;
+  gap: 12px;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.focus-dot {
+  color: var(--accent);
+}
+
+.projects-summary {
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.projects-summary ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+.projects-summary li {
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.projects-summary li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+ 
 
   /* ── SECTIONS ── */
   section { padding: 96px 48px; border-top: 1px solid var(--border); }
@@ -271,8 +325,7 @@
   .hero-name   { animation: fadeUp 0.6s 0.1s ease both; }
   .hero-sub    { animation: fadeUp 0.6s 0.2s ease both; }
   .hero-cta    { animation: fadeUp 0.6s 0.3s ease both; }
-  .hero-stats  { animation: fadeUp 0.6s 0.4s ease both; }
-
+ 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 16px 24px; }
@@ -289,11 +342,11 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">Alex Chen</a>
+  <a class="nav-logo" href="#">Aastha Narain</a>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="mailto:alex@example.com">Contact</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -311,22 +364,67 @@
     </a>
   </div>
   <div class="hero-right">
-    <div class="hero-bg-number">5+</div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-label">Years of experience</span>
-        <span class="stat-value">5+</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-label">Projects shipped</span>
-        <span class="stat-value">24</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-label">Open source contributions</span>
-        <span class="stat-value">80+</span>
+
+  <div class="hero-stats">
+
+    <!-- CURRENTLY BUILDING -->
+    <div class="hero-section">
+      <div class="stat-label">Currently Building</div>
+
+      <div class="focus-list">
+
+        <div class="focus-item">
+          <span class="focus-dot">•</span>
+          <span>Agentic Document Search AI (RAG)</span>
+        </div>
+
+        <div class="focus-item">
+          <span class="focus-dot">•</span>
+          <span>Retrieval-Augmented Generation Systems</span>
+        </div>
+
+        <div class="focus-item">
+          <span class="focus-dot">•</span>
+          <span>AI Agents & Workflow Automation</span>
+        </div>
+
       </div>
     </div>
+
+    <!-- BUILT APPLICATIONS -->
+    <div class="hero-section">
+      <div class="stat-label">Applications Built</div>
+
+      <div class="projects-summary">
+        <ul>
+          <li>
+            <strong>Customer Intelligence Platform</strong> —
+            Customer analytics and business intelligence dashboard.
+          </li>
+
+          <li>
+            <strong>Smart Traffic Surveillance System</strong> —
+            Computer vision system for monitoring and traffic analysis.
+          </li>
+
+          <li>
+            <strong>Explainable Hate Speech Detection System</strong> —
+            NLP model with interpretable AI predictions.
+          </li>
+
+          <li>
+            <strong>Resume Analyzer using NLP (AWS Deployed)</strong> —
+            Automated resume screening and skill extraction platform.
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
+
+</div>
+
+</div>
 </div>
 
 <!-- PROJECTS -->
@@ -436,12 +534,17 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <span class="footer-left">© 2026 Alex Chen</span>
+<footer id="contact">
+  <span class="footer-left">© 2026 Aastha Narain</span>
   <div class="footer-links">
-    <a href="#">GitHub</a>
-    <a href="#">LinkedIn</a>
-    <a href="mailto:alex@example.com">Email</a>
+    <a href="https://github.com/A-Narain" target="_blank">
+  GitHub
+</a>
+    <a href="https://www.linkedin.com/in/aastha-narain-b88ab328a/"
+   target="_blank">
+   LinkedIn
+</a>
+    <a href="mailto:aasthanarain552@gmail.com">aasthanarain552@gmail.com</a>
   </div>
 </footer>
 
